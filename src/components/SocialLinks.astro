@@ -1,0 +1,33 @@
+---
+import SocialLink from "./SocialLink.astro";
+
+const socials = [
+    {
+        label: "Linkedin",
+        href: "https://www.linkedin.com/in/muh-azkaawliya/",
+        icon: "mdi:linkedin",
+    },
+    {
+        label: "Github",
+        href: "https://github.com/AsukaOurijya",
+        icon: "mdi:github",
+    },
+    {
+        label: "Instagram",
+        href: "https://www.instagram.com/azkaaawliya/",
+        icon: "mdi:instagram",
+    },
+]
+---
+
+<div class="flex flex-wrap justify-center gap-6 sm:gap-16">
+    {
+        socials.map((social) => (
+            <SocialLink 
+                href={social.href}
+                label={social.label}
+                icon={social.icon}
+            />
+        ))
+    }
+</div>

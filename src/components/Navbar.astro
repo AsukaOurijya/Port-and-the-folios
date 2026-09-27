@@ -1,0 +1,25 @@
+---
+const links = [
+  { href: "/about", label: "about" },
+  { href: "/showcase", label: "showcase area" },
+  { href: "/contact", label: "contact" },
+  ];
+
+const focusStyle = "focus-visible:outline-2 focuse-visible:outline-offset-4 focus-visible:outline-white";
+---
+
+<nav aria-label="Main navigation" class="mx-auto flex w-[calc(100%-2rem)] max-w-5xl flex-col items-center justify-between gap-3 rounded-3xl bg-nav px-6 py-5 sm:flex-row sm:gap-6 sm:rounded-full">
+  <a href="/" class={`shrink-0 text-3xl font-bold ${focusStyle}`}>
+    akz.dev 
+  </a>
+
+  <div class="flex flex-wrap justify-center gap-x-6 gap-y-3">
+    {
+      links.map(({href, label}) => (
+        <a href="{href}" class={`text-3xl font-bold underline-offset-4 hover:underline sm:text-lg ${focusStyle}`}>
+          {label}
+        </a>
+      ))
+    }
+  </div>
+</nav>

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #2c404b;
+  --color-surface: #506773;
+  --color-nav: #091f29;
+  --font-comic: "Comic Neue", sans-serif;
+}
