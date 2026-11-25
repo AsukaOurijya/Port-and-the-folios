@@ -11,3 +11,8 @@
   from {transform: translateY(-0.75rem);}
   to {transform: translateY(100%);}
 }
+
+@keyframes about-fade-in {
+  from {opacity: 0;}
+  to {opacity: 1};
+}

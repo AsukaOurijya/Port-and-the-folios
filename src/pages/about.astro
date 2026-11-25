@@ -1,21 +1,52 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
+import {Image} from "astro:assets";
+import profilePhoto from "../media/azkauji.jpeg";
+import Snowfall from "../components/Snowfall.astro";
 ---
 
 <BaseLayout title="About | akz.dev">
-    <header class="px-4 pt-5 pb-6">
+    <Snowfall />
+
+    <header class="relative z-10 px-4 pt-5 pb-25">
         <Navbar />
     </header>
 
     <main>
         <section
             aria-labelledby="about-title"
-            class="mx-auto w-full max-w-[70rem] rounded 3xl bg-surface p-6 sm:p-8 md:w-[82vw]"
+            class="mx-auto grid w-full max-w-[70rem] grid-cols-1 gap-6 rounded-3xl bg-surface p-6 sm:p-8 md:w-[82vw] md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-4 motion-safe:animate-[about-fade-in_450ms_ease-out_both]"
         >
-            <h1 id="about-title" class="text-4xl font-bold">
-                Hello!
-            </h1>
+
+            <div>
+                <div class="mx-auto grid aspect-[12/13] w-full max-w-100 overflow-hidden rounded-xl bg-sky-100">
+                    <Image 
+                        src={profilePhoto}
+                        alt="me"
+                        class="block h-full w-full object-cover object-center"
+                    />
+                </div>
+            </div>
+
+            <div md:pt-2>
+                <h1 id="about-title" class="text-6xl font-bold">Hello!</h1>
+
+                <p class="mt-6 text-lg leading-snug font-bold md:text-3xl md:text-justify">
+                    I'm currently studying computer science as an undergraduate. <br />
+                    My interests include software engineering, cloud engineering,
+                    web development, system infrastructure, Linux, a bit of data science and machine learning.
+                </p>
+            </div>
+
+            <a 
+                href="https://ristek.link/cvazka"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mx-auto mt-4 flex min-h-12 w-fit items-center justify-center rounded-full bg-background px-8 py-4 text-3xl font-bold text-white hover:bg-nav focus-visible:outline-2 focus-visible:oytline-offset-4 focus-visible:outline-white"
+                >
+                Get my CV here!
+            </a>
         </section>
     </main>
 </BaseLayout>
