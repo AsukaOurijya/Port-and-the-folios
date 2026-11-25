@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<BaseLayout title="About | akz.dev">
+    <header class="px-4 pt-5 pb-6">
+        <Navbar />
+    </header>
+
+    <main>
+        <section
+            aria-labelledby="about-title"
+            class="mx-auto w-full max-w-[70rem] rounded 3xl bg-surface p-6 sm:p-8 md:w-[82vw]"
+        >
+            <h1 id="about-title" class="text-4xl font-bold">
+                Hello!
+            </h1>
+        </section>
+    </main>
+</BaseLayout>
