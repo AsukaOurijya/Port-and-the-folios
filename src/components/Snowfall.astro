@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components"; 
+
+const flakes = Array.from({length: 150}, (_, i) => ({
+    left: (i * 37) % 100,
+    duration: 10 + (i % 5),
+    delay: -i * 0.47,
+}));
+
+---
+
+<div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 z-0 overflow-hidden text-white/25 motion-reduce:hidden"
+>
+    {
+        flakes.map(({left, duration, delay}) => (
+            <span 
+                class="absolute inset-y-0 animate-[snowfall_var(--duration)_linear_var(--delay)_infinite]"
+                style={`left: ${left}%; --duration: ${duration}s; --delay: ${delay}s;`}
+                >
+                <Icon name="mdi:snowflake" class="block size-6" />
+            </span>
+        ))
+    }
+</div>

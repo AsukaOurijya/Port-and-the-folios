@@ -2,15 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
+import Snowfall from "../components/Snowfall.astro";
 ---
 
 <BaseLayout>
-  <div class="grid min-h-svh grid-rows-[minmax(20svh,auto)_1fr_16svh]">
-    <header class="px-4 pt-5 pb-6">
+  <div class="relative isolate grid min-h-svh grid-rows-[minmax(20svh,auto)_1fr_16svh]">
+    <Snowfall />
+
+    <header class="relative z-10 px-4 pt-5 pb-6">
       <Navbar />
     </header>
 
-    <main class="flex">
+    <main class="relatove z-10 flex bg-surface">
       <Hero />
     </main>
 

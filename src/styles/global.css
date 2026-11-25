@@ -6,3 +6,8 @@
   --color-nav: #091f29;
   --font-comic: "Comic Neue", sans-serif;
 }
+
+@keyframes snowfall {
+  from {transform: translateY(-0.75rem);}
+  to {transform: translateY(100%);}
+}
